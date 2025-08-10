@@ -1,7 +1,14 @@
 return {
-  -- { import = "lazyvim.plugins.extras.ui.dashboard-nvim" },
-  -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
-  -- { import = "lazyvim.plugins.extras.lang.json" },
-  -- { import = "lazyvim.plugins.extras.lang.nix" },
-  -- { import = "lazyvim.plugins.extras.lang.python" },
+  "mfussenegger/nvim-lint",
+  opts = {
+    linters_by_ft = {
+      markdown = { "markdownlint" },
+    },
+    linters = {
+      markdownlint = {
+        -- To disable a rule, add it to the 'disable' table
+        args = { "--disable", "MD013" },
+      },
+    },
+  },
 }
